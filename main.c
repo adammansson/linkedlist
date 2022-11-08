@@ -24,6 +24,7 @@ void IL_test(linkedlist_t *ll) {
   IL_insert(ll, &g, 6);
 
   IL_print(ll);
+  printf("%i\n", *IL_get(ll, 4));
 }
 
 void SL_test(linkedlist_t *ll) {
@@ -32,14 +33,21 @@ void SL_test(linkedlist_t *ll) {
   char *c = "c";
   char *d = "d";
   char *e = "e";
+  char *f = "f";
+  char *g = "mmmmmmm";
 
   SL_append(ll, a);
   SL_append(ll, b);
   SL_append(ll, c);
   SL_prepend(ll, d);
   SL_prepend(ll, e);
+  SL_prepend(ll, f);
+
+  SL_insert(ll, g, 0);
+  SL_insert(ll, g, 6);
 
   SL_print(ll);
+  printf("%s\n", SL_get(ll, 4));
 }
 
 int main() {
@@ -51,7 +59,6 @@ int main() {
   SL_test(ll);
 
   LL_free(ll);
-
   printf("Memory freed succesfully, exiting program");
   return 0;
 }
