@@ -11,9 +11,11 @@ struct node {
   void *element;
   size_t size;
 
+  struct node *prev;
   struct node *next;
 };
 
-struct node *new_node(void *element, size_t size, struct node *next);
+struct node *NODE_new(void *element, size_t size, struct node *prev,
+                      struct node *next);
 
 #endif // LINKEDLIST_NODE_H

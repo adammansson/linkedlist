@@ -16,13 +16,16 @@ typedef struct {
 
 linkedlist_t *LL_new();
 
-void LL_foreach(linkedlist_t *ll, void (*function_ptr)(void *));
+void LL_foreach(linkedlist_t *ll, void (*fun_ptr)(void *));
 
 void LL_free(linkedlist_t *ll);
 
 void LL_append(linkedlist_t *ll, void *element, size_t size);
 
 void LL_prepend(linkedlist_t *ll, void *element, size_t size);
+
+void LL_insert(linkedlist_t *ll, void *element, size_t size,
+               unsigned int index);
 
 void *LL_get(linkedlist_t *ll, unsigned int index);
 
