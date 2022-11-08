@@ -6,7 +6,6 @@
 #define LINKEDLIST_INTLIST_H
 
 #include "linkedlist.h"
-#include <stddef.h>
 
 void IL_append(linkedlist_t *ll, int *element);
 

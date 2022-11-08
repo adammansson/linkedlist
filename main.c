@@ -1,13 +1,10 @@
 #include "src/intlist.h"
 #include "src/linkedlist.h"
+#include "src/strlist.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
-  linkedlist_t *ll;
-
-  ll = LL_new();
-
+void IL_test(linkedlist_t *ll) {
   int a = 1;
   int b = 2;
   int c = 3;
@@ -27,8 +24,34 @@ int main() {
   IL_insert(ll, &g, 6);
 
   IL_print(ll);
+}
+
+void SL_test(linkedlist_t *ll) {
+  char *a = "a";
+  char *b = "b";
+  char *c = "c";
+  char *d = "d";
+  char *e = "e";
+
+  SL_append(ll, a);
+  SL_append(ll, b);
+  SL_append(ll, c);
+  SL_prepend(ll, d);
+  SL_prepend(ll, e);
+
+  SL_print(ll);
+}
+
+int main() {
+  linkedlist_t *ll;
+
+  ll = LL_new();
+
+  // IL_test(ll);
+  SL_test(ll);
 
   LL_free(ll);
+
   printf("Memory freed succesfully, exiting program");
   return 0;
 }

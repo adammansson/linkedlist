@@ -6,7 +6,7 @@
 #include "linkedlist.h"
 #include <stdio.h>
 
-#define TO_INT(voidptr) (*(int *)voidptr)
+#define TO_INT(voidptr) (*((int *)voidptr))
 
 void IL_append(linkedlist_t *ll, int *element) {
   LL_append(ll, element, sizeof(int));
